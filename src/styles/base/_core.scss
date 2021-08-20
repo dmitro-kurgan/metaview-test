@@ -1,0 +1,47 @@
+@import "../utils/functions";
+@import "../utils/mixins";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: $app-min-width;
+
+  @include typography($color-base, font-weight("Regular"), $font-size-base, $font-family-base, $line-height-base);
+
+  letter-spacing: 0.38px;
+  background-color: $body-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include typography($title-color-base, font-weight("Extra Bold"));
+}
+
+@each $title, $size in $title-sizes {
+  #{$title} {
+    font-size: $size;
+  }
+}
+
+h1 {
+  line-height: $h1-lh;
+}
+
+p {
+  color: $color-base;
+}
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:active {
+    color: $link-active-color;
+  }
+}

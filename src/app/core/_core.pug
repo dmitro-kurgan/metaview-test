@@ -1,0 +1,35 @@
+include ./utils/_mixins
+block variables
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="description", content="Description content")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    title Metaview Desktop Only
+
+    link(rel="preload" href="assets/fonts/SFProDisplay/SFProDisplay-ExtraBold/SFProDisplay-ExtraBold.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="assets/fonts/SFProDisplay/SFProDisplay-Bold/SFProDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="assets/fonts/SFProDisplay/SFProDisplay-SemiBold/SFProDisplay-SemiBold.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="assets/fonts/SFProDisplay/SFProDisplay-Medium/SFProDisplay-Medium.woff2" as="font" type="font/woff2" crossorigin)
+    link(rel="preload" href="assets/fonts/SFProDisplay/SFProDisplay-Regular/SFProDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin)
+
+    //- Styles link
+    link(rel="stylesheet preload" href="css/main.css" as="style")
+
+  body
+    div.wrapper
+      block header
+      block main
+      block footer
+    script(src="js/libs.js" defer="defer")
+    block scripts
+      // Libs for animation
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" defer="defer")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer="defer")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer="defer")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.velocity.min.js" defer="defer")
+    script(src="js/main.js" defer="defer")

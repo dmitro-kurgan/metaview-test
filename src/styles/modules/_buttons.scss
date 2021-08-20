@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 12px 16px;
+  color: $black;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  background-color: $bg-secondary;
+  border: $border-width-base $border-style-base $color-base;
+  border-radius: $border-radius-sm;
+
+  &:hover {
+    color: $black;
+  }
+
+  &--primary {
+    color: $color-base;
+    background-color: $purple;
+    border-color: $purple;
+
+    &:hover {
+      color: $color-base;
+    }
+  }
+
+  &--ghost {
+    color: $color-secondary;
+    background-color: transparent;
+    border-color: $border-color-base;
+
+    &:hover {
+      background-color: $bg-secondary;
+    }
+  }
+}

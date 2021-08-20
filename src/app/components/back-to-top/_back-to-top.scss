@@ -1,0 +1,42 @@
+.btn-to-top {
+  $border-width: 3px;
+  $width:  42px;
+  $height: 42px;
+
+  @include fixed($right: 40px, $bottom: 20px);
+
+  z-index: -1;
+
+  @include size($width, $height);
+
+  outline: none;
+  opacity: 0;
+  transition: 0.3s opacity;
+
+  @include mq("phone") {
+    right: 20px;
+    filter: drop-shadow(2px 4px 6px $black);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    @include absolute($top: 4px, $left: 4px);
+    @include arrow($color: $white, $dir: up, $size: 12px, $border-width: $border-width);
+  }
+
+  &::after {
+    @include absolute($top: 0, $right: 23px);
+    @include size($border-width, $height - $border-width);
+
+    background-color: $white;
+  }
+
+  &.show {
+    z-index: 98;
+    opacity: 1;
+  }
+}

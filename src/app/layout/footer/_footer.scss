@@ -1,0 +1,66 @@
+$gap: 24px;
+
+.footer {
+  $this: &;
+
+  padding: 32px 0;
+  font-weight: 500;
+
+  &__content {
+    @include flex($justify: space-between, $align: center);
+  }
+
+  &__copyright {
+    @include typography(rgba(255, 255, 255, 0.25));
+
+    letter-spacing: -0.154px;
+    text-align: center;
+  }
+
+  &__nav {
+    margin-right: $gap;
+    margin-left: auto;
+
+    &-item + #{$this}__nav-item {
+      margin-left: $gap;
+    }
+  }
+}
+
+.socials {
+  $this: &;
+
+  svg {
+    @include size(16px);
+
+    margin-right: 8px;
+    fill: $gray-2;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__item + #{$this}__item {
+    margin-left: $gap;
+    padding-left: $gap;
+
+    &::before {
+      @include absolute($left: 0, $top: 0, $bottom: 0);
+      @include size(1px, 16px);
+
+      margin: auto;
+      background-color: rgba($color-base, 0.25);
+      border-radius: 3px;
+      content: "";
+    }
+  }
+
+  &__item:hover {
+    svg {
+      fill: $color-base;
+    }
+  }
+}

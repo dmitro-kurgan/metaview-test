@@ -1,0 +1,15 @@
+// --- #Global styles--- //
+@import "~normalize.css/normalize";
+@import "./base";
+@import "./utilities";
+
+// Modules
+@import "./modules";
+
+// Layout
+@import "../app/layout/header/header";
+@import "../app/layout/main/main";
+@import "../app/layout/footer/footer";
+
+// --- #App styles--- //
+@import "../app/app";

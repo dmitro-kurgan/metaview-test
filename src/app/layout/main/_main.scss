@@ -1,0 +1,9 @@
+.wrapper {
+  @include flex($dir: column);
+
+  height: 100%;
+}
+
+main.main {
+  flex-grow: 1;
+}

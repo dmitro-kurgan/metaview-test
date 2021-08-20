@@ -1,0 +1,77 @@
+.first-screen {
+  @include flex($align: center, $justify: center, $dir: column);
+
+  height: 100vh;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-top: auto;
+  }
+}
+
+.anim-typewriter {
+  display: block;
+  min-height: $h1-lh;
+
+  &__symbol {
+    position: relative;
+
+    &--last::before {
+      @include absolute($top: 0, $left: 0);
+      @include size(3px, 48px);
+
+      background-color: $purple;
+      border-radius: 3px;
+      animation: fadeIn 0.3s infinite alternate;
+      content: "";
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  margin-top: 48px;
+}
+
+.input-wrapper {
+  @include flex($justify: space-between);
+
+  max-width: 400px;
+  height: 52px;
+  margin: auto;
+  padding: 4px;
+  border: $border-base;
+  border-radius: $border-radius-base;
+}
+
+.form-control {
+  flex-grow: 1;
+  padding: 4px 12px;
+  color: $white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: $gray-2;
+  }
+}
+
+.gradient-text {
+  margin-top: auto;
+  margin-bottom: 100px;
+
+  @include typography($weight: 700, $size: 20px);
+
+  background: linear-gradient(to right, rgba($white, 0.45) 0%, $white 50%, rgba($white, 0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

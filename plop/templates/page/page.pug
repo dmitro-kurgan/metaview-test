@@ -1,0 +1,19 @@
+extends ../../core/_core
+include ../../layout/main/_main
+
+block variables
+  - var title = "{{ sentenceCase pageName }} page"
+  - var pageClass = "{{ dashCase pageName }}-page"
+
+block header
+  include ../../layout/header/_header
+
+block main
+  +main()
+    // Components
+    {{#if needComponent}}
+    include ./components/{{ dashCase componentName }}/_{{ dashCase componentName }}
+    {{/if}}
+
+block footer
+  include ../../layout/footer/_footer

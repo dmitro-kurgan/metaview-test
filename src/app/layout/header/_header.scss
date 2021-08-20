@@ -1,0 +1,60 @@
+.header {
+  $this: &;
+
+  @include fixed($top: 0, $left: 0, $right: 0);
+
+  z-index: 99;
+  background: $bg-base;
+  transition: 0.3s background ease-in-out;
+
+  &::after {
+    @include absolute($bottom: 0, $right: 0, $left: 0);
+    @include size(0, 1px);
+
+    margin: auto;
+    background-color: $border-color-base;
+    transition: 0.3s width ease;
+    content: "";
+  }
+
+  &__content.container {
+    @include flex($justify: space-between);
+
+    padding: 32px 0 16px;
+    transition: 0.3s padding ease;
+  }
+
+  &.fixed {
+    #{$this}__content {
+      padding-top: 16px;
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  &__img {
+    display: block;
+  }
+
+  &__text {
+    margin-left: 8px;
+    color: $color-base;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.nav {
+  $this: &;
+
+  &__item + #{$this}__item {
+    margin-left: 24px;
+  }
+}

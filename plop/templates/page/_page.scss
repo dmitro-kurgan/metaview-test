@@ -1,0 +1,6 @@
+.{{ dashCase pageName }}-page {
+  // Components
+  {{#if needComponent}}
+  @import "./components/{{ componentName }}/{{ componentName }}";
+  {{/if}}
+}

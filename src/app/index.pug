@@ -1,0 +1,19 @@
+extends ./core/_core
+include ./layout/main/_main
+
+block variables
+  - var title = "Title"
+
+block header
+  include ./layout/header/_header
+
+block main
+  +main()
+    // Screens
+    include ./screens/first-screen/_first-screen
+    include screens/cards/_cards
+
+    include ./components/back-to-top/_back-to-top
+
+block footer
+  include ./layout/footer/_footer

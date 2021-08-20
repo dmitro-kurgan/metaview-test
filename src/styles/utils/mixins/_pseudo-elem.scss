@@ -1,0 +1,13 @@
+@mixin pseudo($type: before, $pos: absolute, $display: block, $content: ""){
+  &::#{$type} {
+    @if $pos {
+      position: $pos;
+    }
+
+    display: $display;
+
+    @content;
+
+    content: $content;
+  }
+}

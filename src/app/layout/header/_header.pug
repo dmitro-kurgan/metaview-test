@@ -1,0 +1,34 @@
+header.header
+  div.header__content.container
+    a(
+    class="logo"
+    href="./"
+    )
+      picture
+        source(
+          srcset="assets/images/angry.webp"
+          type="image/webp"
+        )
+        source(
+          srcset="assets/images/angry.png"
+          type="image/png"
+        )
+        img(
+          class="logo__img"
+          src="assets/images/angry.png"
+          alt="Logo"
+          draggable="false"
+          loading="lazy"
+          width="20"
+          height="20"
+        )
+      span.logo__text AGHHH!
+    nav.nav
+      a(
+      href="#"
+      class="nav__item btn btn--ghost"
+      ) Contact Us
+      a(
+        href="#"
+        class="nav__item btn btn--primary"
+      ) Join Waitlist

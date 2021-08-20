@@ -1,0 +1,15 @@
+@function font-weight($key: "Regular") {
+  @return map-get($font-weights, $key);
+}
+
+@function breakpoint($key: "desktop") {
+  @return map-get($breakpoints, $key);
+}
+
+@function container-width($key: "desktop") {
+  @return map-get($container-widths, $key);
+}
+
+@function title-size($key: "h1") {
+  @return map-get($title-sizes, $key);
+}
